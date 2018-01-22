@@ -14,14 +14,12 @@ class Movies extends React.Component {
     }
 
     showMoviesHandler = () => {
-        console.log('fired')
         this.setState({
             toggleMovies: true
         })
     }
 
     render(){
-        const movie = <Movie />
         return (
                 <div>
                     <h1>
@@ -30,7 +28,7 @@ class Movies extends React.Component {
                     </h1>
                     <div className="Line"></div>
                     <Button click={this.showMoviesHandler}/>
-                    {movie}
+                    {this.state.toggleMovies ? <Movie /> : null}
                 </div>
         )
     }
