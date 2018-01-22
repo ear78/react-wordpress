@@ -1,40 +1,27 @@
 import React from 'react';
+import Movie from './Movie/Movie';
+import Button from '../../components/UI/Button/Button';
 import logo from '../../logo.svg';
 import wplogo from '../../wplogo.svg';
 import './Movies.css';
 
-class MoviesComp extends React.Component {
+class Movies extends React.Component {
     constructor(){
         super();
         this.state = {
-            movies: []
+            toggleMovies: false
         }
-    };
+    }
 
-    componentDidMount(){
-        let dataURL = "http://localhost:8888/wordpresstest/wp-json/wp/v2/movies?_embed";
-        fetch(dataURL)
-          .then((res) => res.json())
-          .then(res => {
-            this.setState({
-              movies: res
-            })
-          })
-          .catch(err => {
-              console.log('this has been an error of the national broadcast system');
-          })
+    showMoviesHandler = () => {
+        console.log('fired')
+        this.setState({
+            toggleMovies: true
+        })
     }
 
     render(){
-        let movies = this.state.movies.map((movie, index) => {
-            return <div className="Max-width" key={index}>
-                        <img src={movie._embedded['wp:featuredmedia'][0].source_url} />
-                      <p className="Small-titles"><strong className="Strong">Title:</strong> {movie.title.rendered}</p>
-                      <p className="Small-titles"><strong className="Strong">Release Year:</strong> {movie.acf.release_year}</p>
-                      <p className="Small-titles"><strong className="Strong">Rating:</strong> {movie.acf.rating}</p>
-                      <div className="Margin-bottom Description"><strong className="Strong">Description:</strong><div dangerouslySetInnerHTML={ {__html: movie.acf.description} } /></div>
-                   </div>
-        });
+        const movie = <Movie />
         return (
                 <div>
                     <h1>
@@ -42,10 +29,11 @@ class MoviesComp extends React.Component {
                         React <span className="And">And</span>Wordpress <img className="Wp-logo" src={wplogo} alt="Wordpress Logo" />
                     </h1>
                     <div className="Line"></div>
-                    {movies}
+                    <Button click={this.showMoviesHandler}/>
+                    {movie}
                 </div>
         )
     }
 };
 
-export default MoviesComp;
+export default Movies;
