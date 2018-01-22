@@ -1,0 +1,44 @@
+
+h1 {
+    font-size: 1.75em;
+    text-align: center;
+    text-transform: uppercase;
+    background: #3a3a3a;
+    color: #61dafb;
+    font-weight: 100;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Small-titles {
+    font-style: italic;
+    margin: 10px 0;
+}
+
+.Strong {
+    font-weight: 700;
+}
+.And {
+    font-style: italic;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: gray;
+}
+
+.React-logo {
+    width: 40px;
+}
+
+.Wp-logo {
+    width: 34px;
+    margin-left: 8px;
+    margin-right: 6px;
+}
+
+.Description {
+    font-size: .9em;
+    text-align: justify;
+    hyphens: auto;
+}

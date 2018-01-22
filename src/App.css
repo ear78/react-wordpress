@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+
 }
 
 .App-logo {
@@ -25,4 +25,37 @@
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+img {
+    width: 100%;
+    max-width: 768px;
+}
+
+.Max-width {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 15px;
+}
+
+.Margin-bottom {
+    margin-bottom: 75px;
+}
+
+.Line {
+    max-width: 200px;
+    height: 1px;
+    background-color: #dcd;
+    margin: 0px auto 20px;
+}
+
+strong {
+    font-style: normal;
+}
+
+@media(min-width: 768px){
+    .App {
+      text-align: center;
+    }
 }
